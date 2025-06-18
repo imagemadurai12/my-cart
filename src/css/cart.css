@@ -1,0 +1,31 @@
+.cart-container{
+    height: 100%;
+    width: 120px;
+    background-color: #e7daee;
+    position: relative;
+}
+.cart-container button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: inherit;
+}
+.cart-container .cart-price-container{
+    height: 250px;
+    width: 250px;
+    background-color: #ac6ec9;
+    position: absolute;
+    top:100%;
+    right:0px;
+    /* display: block; */
+    visibility: visible;
+}
+
+.card-price-container-none{
+    visibility: hidden;
+    /* display: none; */
+}

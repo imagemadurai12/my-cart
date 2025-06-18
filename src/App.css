@@ -18,7 +18,7 @@ header{
 main{
   height: 90vh;
   width: 100%;
-  background-color: lightgray;
+  /* background-color: lightgray; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,8 +30,13 @@ main{
   /* background-color:lightslategray; */
 }
 
+header .wrapper{
+  display: flex;
+  justify-content: end;
+}
+
 main .wrapper{
-  background-color: rgb(143, 143, 143);
+  /* background-color: rgb(143, 143, 143); */
   display: flex;
   align-items: center;
   justify-content: space-evenly;
