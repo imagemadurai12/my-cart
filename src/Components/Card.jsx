@@ -21,7 +21,6 @@ function Card(props) {
     return overlay===true?"card-quantity-info card-quantity-visible":"card-quantity-info card-quantity-invisible";
   }
 
-
   return (
     // <div className='card-container card-not-selected' onClick={changeOverlay}>
     <div className={cardColorChange()} onClick={changeOverlay}>
@@ -33,9 +32,11 @@ function Card(props) {
 
       <div className={cardVisibility()}>
         <p>Quantity</p>
-        <span>ZERO</span>
-        <button>+</button>
-        <button>-</button>
+        <span className={props.pDetails.quantity===0?"quan-zero":"quan-non-zero"}>
+          {props.pDetails.quantity===0?"ZERO":props.pDetails.quantity}
+        </span>
+        <button onClick={props.onIncrement}>+</button>
+        <button onClick={props.onDecrement}>-</button>
       </div>
 
     </div>

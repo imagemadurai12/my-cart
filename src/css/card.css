@@ -44,12 +44,18 @@
 .card-container .card-quantity-info span{
     display: block;
     padding: 10px 20px;
-    background-color: goldenrod;
     border-radius: 5px;
     font-weight: 600;
     font-size:18px;
-
 }
+.quan-zero{
+    background-color: goldenrod;
+}
+.quan-non-zero{
+    color: white;
+    background-color: navy;
+}
+
 .card-container .card-quantity-info button{
     padding: 8px;
     font-size:18px;

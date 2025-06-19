@@ -1,10 +1,12 @@
+import { useState } from "react";
 import "./App.css";
 import Card from "./Components/Card";
 import Cart from "./Components/Cart";
 // import Testing from "./Components/Testing";
 
 function App() {
-  let products = [
+  // let products = ;
+  let [products,setProducts] = useState([
     {
       pid: 1,
       pname: "Strawberry Shake",
@@ -27,7 +29,54 @@ function App() {
       price: 369,
       quantity: 0,
     },
-  ];
+  ]);
+
+  function onQuanIncrease(prod,e)
+  {
+    e.stopPropagation();
+    // console.log(e);
+    // alert('Increment working');
+
+    let selectedProducts=[...products];
+    let selProdIndex=selectedProducts.indexOf(prod);
+    selectedProducts[selProdIndex].quantity++;
+    // console.log(selectedProducts);
+    // console.log(selProdIndex);
+    // console.log(prod);
+
+    if(selectedProducts[selProdIndex].quantity>10)
+    {
+      selectedProducts[selProdIndex].quantity=10;
+      alert('WARNING : You have limit to add maximum 10 Products');
+    }
+
+
+    setProducts(selectedProducts);
+
+
+
+  }
+
+  function onQuanDecrease(prod,e)
+  {
+    e.stopPropagation();
+    let selectedProducts=[...products];
+    let selProdIndex=selectedProducts.indexOf(prod);
+    console.log(selectedProducts[selProdIndex].quantity--);
+    
+    // console.log(selectedProducts);
+    // console.log(prod);
+    // console.log(selProdIndex);
+
+    if(selectedProducts[selProdIndex].quantity<=0)
+    {
+      selectedProducts[selProdIndex].quantity=0;
+    }
+
+    setProducts(selectedProducts);
+    
+    // alert('Decrement working');
+  }
 
   return (
     <div className="App">
@@ -44,7 +93,10 @@ function App() {
       <main>
         <div className="wrapper">
           {products.map((prod) => (
-            <Card key={prod.pid} pDetails={prod} />
+            <Card key={prod.pid} pDetails={prod} 
+            onIncrement={(e)=>onQuanIncrease(prod,e)}
+            onDecrement={(e)=>onQuanDecrease(prod,e)}
+            />
           ))}
 
           {/* <Card pHeading="Strawberry Shake" 
