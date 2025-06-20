@@ -36,25 +36,18 @@ function App() {
     e.stopPropagation();
     // console.log(e);
     // alert('Increment working');
-
     let selectedProducts=[...products];
     let selProdIndex=selectedProducts.indexOf(prod);
     selectedProducts[selProdIndex].quantity++;
     // console.log(selectedProducts);
     // console.log(selProdIndex);
     // console.log(prod);
-
     if(selectedProducts[selProdIndex].quantity>10)
     {
       selectedProducts[selProdIndex].quantity=10;
       alert('WARNING : You have limit to add maximum 10 Products');
     }
-
-
     setProducts(selectedProducts);
-
-
-
   }
 
   function onQuanDecrease(prod,e)
@@ -63,18 +56,14 @@ function App() {
     let selectedProducts=[...products];
     let selProdIndex=selectedProducts.indexOf(prod);
     console.log(selectedProducts[selProdIndex].quantity--);
-    
     // console.log(selectedProducts);
     // console.log(prod);
     // console.log(selProdIndex);
-
     if(selectedProducts[selProdIndex].quantity<=0)
     {
       selectedProducts[selProdIndex].quantity=0;
     }
-
     setProducts(selectedProducts);
-    
     // alert('Decrement working');
   }
 
@@ -82,7 +71,7 @@ function App() {
     <div className="App">
       <header>
         <div className="wrapper">
-          <Cart />
+          <Cart products={products}/>
         </div>
       </header>
       

@@ -16,16 +16,29 @@
 }
 .cart-container .cart-price-container{
     height: 250px;
-    width: 250px;
+    width: 320px;
     background-color: #ac6ec9;
     position: absolute;
     top:100%;
     right:0px;
-    /* display: block; */
+   /* display: block; */
+}
+
+.visible{
     visibility: visible;
 }
 
-.card-price-container-none{
+.invisible{
     visibility: hidden;
-    /* display: none; */
+}
+
+
+.cart-price-container ul{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    list-style-type: none;
+    gap: 15px;
 }
